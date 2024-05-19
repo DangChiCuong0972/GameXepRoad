@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public float fuel = 0;
+    public int roundNumber = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,10 @@ public class GameManager : MonoBehaviour
         this.fuel += fuel;
     }    
 
+    public void SetRound(int round)
+    {
+        roundNumber += round;
+    }
 }
 
 

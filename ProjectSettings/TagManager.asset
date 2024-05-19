@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Damage
   - Fuel
+  - FinishGate
   layers:
   - Default
   - TransparentFX

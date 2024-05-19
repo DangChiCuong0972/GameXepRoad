@@ -11,6 +11,8 @@ public class CarController01 : MonoBehaviour
        private float currentHealth = 0;
        public float fuelValue = 20;
        public float damageValue = 50;
+    public int roundValue = 1;
+    private bool isGate = false;
 
        public GameObject explusionPrefab;
         // Start is called before the first frame update
@@ -44,7 +46,21 @@ public class CarController01 : MonoBehaviour
             Debug.LogWarning("So Health con lai : " + currentHealth);
             InstantiateGame(other);
             
+        }else if (other.tag == "FinishGate")
+        {
+            if (isGate)
+            {
+                GameManager.Instance.SetRound(roundValue);
+                isGate = false;
+            }
         }
+
+        if (other.name == "Gate")
+        {
+            isGate = true;
+        }
+
+
 
     }
 
